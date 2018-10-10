@@ -17,6 +17,16 @@ public class Game
             }
         }
         System.out.println("You got it!");
+    }
+    public static int ai(String value)
+    {
+        if (value.equals("The number is lower than you guessed"))
+        {
 
+        }
+        else
+        {
+
+        }
     }
 }
