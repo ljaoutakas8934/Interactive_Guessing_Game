@@ -20,13 +20,19 @@ public class Game
     }
     public static int ai(String value)
     {
-        if (value.equals("The number is lower than you guessed"))
-        {
+        int a = 50;
 
-        }
-        else
+        while (int)
         {
+            if (value.equals("The number is lower than you guessed"))
+            {
 
+            }
+            else
+            {
+
+            }
         }
+        return a;
     }
 }
