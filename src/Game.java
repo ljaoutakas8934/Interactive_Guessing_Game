@@ -7,11 +7,12 @@ public class Game
         Scanner input1 = new Scanner(System.in);
         System.out.println("Which game do you want to play?");
         System.out.println("Press ''1'' to make the computer guess, ''2'' if you want to guess.");
-        if (input1.nextInt() == 1)
+        int ui1 = input1.nextInt();
+        if (ui1 == 1)
         {
             aigame();
         }
-        if (input1.nextInt() == 2)
+        if (ui1 == 2)
         {
             guessgame();
         }
@@ -32,20 +33,26 @@ public class Game
             useri = input3.nextLine();
             if (useri.equals("g"))
             {
-                lowerlim = guess;
+               lowerlim = guess;
+               guess = (int)(((upperlim-lowerlim)/2)+lowerlim);
             }
             if (useri.equals("l"))
             {
                 upperlim = guess;
+                guess = (int)(((upperlim-lowerlim)/2)+lowerlim);
             }
             if (useri.equals("e"))
             {
                 break;
             }
-            guess = (int)(Math.random()*(upperlim-lowerlim)+lowerlim);
             numguess++;
         }
-        System.out.println("Great!");
+        String plural = " try!";
+        if (numguess >1)
+        {
+            plural = " tries!";
+        }
+        System.out.println("Great! The computer got it in "+numguess+plural);
 
     }
     public static void guessgame()
@@ -56,7 +63,7 @@ public class Game
         int numguess = 1;
         String guesses = "";
         System.out.println("Guess the number:");
-        System.out.println("it is "+num1);
+        // System.out.println("it is "+num1);
         while (guess != num1)
         {
             guess = input2.nextInt();
@@ -67,7 +74,12 @@ public class Game
             }
             guesses = guesses + " " + Integer.toString(guess);
         }
-        System.out.println("You got it in " + numguess + " tries!");
+        String plural = " try!";
+        if (numguess >1)
+        {
+            plural = " tries!";
+        }
+        System.out.println("You got it in " + numguess + plural);
         System.out.println("These were your guesses: " + guesses );
     }
 }
