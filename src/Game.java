@@ -6,7 +6,7 @@ public class Game
     {
         Scanner input1 = new Scanner(System.in);
         System.out.println("Which game do you want to play?");
-        System.out.println("Press ''1'' to make the computer guess, ''2'' if you want to guess.");
+        System.out.println("Type ''1'' to make the computer guess, ''2'' if you want to guess.");
         int ui1 = input1.nextInt();
         if (ui1 == 1)
         {
@@ -20,16 +20,15 @@ public class Game
     public static void aigame()
     {
         Scanner input3 = new Scanner (System.in);
-        System.out.println("Think of a number from 1 to 1000");
+        System.out.println("Think of a number from 1 to 100");
         int lowerlim = 0;
-        int upperlim = 1000;
-        int guess = 500;
+        int upperlim = 100;
+        int guess = 50;
         int numguess = 1;
         String useri = "";
         while (true)
         {
             System.out.println("Is your number greater than, (type: 'g') less than, (type: 'l') or equal to ('type: e') the number " + guess + "?");
-            //make a variable and set it to next line, and check that.
             useri = input3.nextLine();
             if (useri.equals("g"))
             {
@@ -62,7 +61,7 @@ public class Game
         int guess = 101;
         int numguess = 1;
         String guesses = "";
-        System.out.println("Guess the number:");
+        System.out.println("Guess any number from 1 to 100:");
         // System.out.println("it is "+num1);
         while (guess != num1)
         {
